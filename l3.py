@@ -2,7 +2,7 @@ import requests
 
 def search_repositories(query):
     url = "https://api.github.com/search/repositories"
-    params = {"q": query, "per_page": 15}
+    params = {"q": query, "per_page": 100}
     response = requests.get(url, params=params)
     if response.status_code == 200:
         return response.json()["items"]
